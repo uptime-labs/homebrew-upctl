@@ -3,11 +3,11 @@ class Upctl < Formula
   homepage "https://github.com/uptime-labs/upctl"
   license "MIT"  # Update this based on your actual license
 
-  version "v0.3.1"
+  version "0.3.1"
 
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_arm64"
+      url "https://github.com/uptime-labs/upctl/releases/download/#{version}/upctl_#{version}_darwin_arm64"
       sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_amd64"
