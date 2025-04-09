@@ -3,24 +3,23 @@ class Upctl < Formula
   homepage "https://github.com/uptime-labs/upctl"
   license "MIT"  # Update this based on your actual license
 
-  # Update with your latest version
-  version "0.8.0"  # Update based on your latest release version
+  version "v0.3.1"
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_arm64"
-      sha256 "REPLACE_WITH_ACTUAL_SHA256"  # Replace with actual SHA256 from your build
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_amd64"
-      sha256 "REPLACE_WITH_ACTUAL_SHA256"  # Replace with actual SHA256 from your build
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_arm64"
-      sha256 "REPLACE_WITH_ACTUAL_SHA256"  # Replace with actual SHA256 from your build
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_amd64"
-      sha256 "REPLACE_WITH_ACTUAL_SHA256"  # Replace with actual SHA256 from your build
+      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
     end
   end
 
@@ -55,11 +54,11 @@ class Upctl < Formula
             restart: unless-stopped
     EOS
 
-    mkdir_p "#{Dir.home}/.upctl"
-    cp "upctl.yaml", "#{Dir.home}/.upctl.yaml" unless File.exist?("#{Dir.home}/.upctl.yaml")
+    mkdir_p "\#{Dir.home}/.upctl"
+    cp "upctl.yaml", "\#{Dir.home}/.upctl.yaml" unless File.exist?("\#{Dir.home}/.upctl.yaml")
   end
 
   test do
-    assert_match "upctl version", shell_output("#{bin}/upctl version")
+    assert_match "upctl version", shell_output("\#{bin}/upctl version")
   end
 end
