@@ -26,7 +26,6 @@ class Upctl < Formula
   depends_on "kubectl" => :recommended
   depends_on "mysql-client" => :recommended
   depends_on "awscli" => :recommended
-  depends_on "docker" => :recommended
   depends_on "helm" => :recommended
 
   def install
