@@ -3,29 +3,30 @@ class Upctl < Formula
   homepage "https://github.com/uptime-labs/upctl"
   license "MIT"  # Update this based on your actual license
 
-  version "0.3.2"
+  version "0.4.0"
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_arm64"
-      sha256 "bbe3ca993f42df4d152226188ef88f23c281d8ae580af939f08464d62de807ea"
+      sha256 "2701ea4e51a59c852164ed41966e48b38ff59473de9fc4769e23358fd61a9cde"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_amd64"
-      sha256 "e9b29ca5fe15633cc85fae0ecc8ebb8453990419abc56fa79bfd63823950948e"
+      sha256 "f81e32b8d436c5e91e973ef1353f632f171a40ef3b7149debc4efc62bfb24e64"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_arm64"
-      sha256 "35306f689b17484124793b1cc4fc4eda7f2e2c4a42085625f426f4b37140be52"
+      sha256 "60444774560dc01a747d0ad0ffb17302c3a1e3bdcdfc66a911fbeb3d807b3d34"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_amd64"
-      sha256 "d94bf0240ff7ee1dc4ac702d6c7f148f80a1ce58ecb56133b5f8306d7a53e6d3"
+      sha256 "da1d6960dc33a5e66b7ea8cee1c5c16e70a05ef3d0f8e576ab3f8f586cfe1891"
     end
   end
 
   depends_on "kubectl" => :recommended
   depends_on "mysql-client" => :recommended
   depends_on "awscli" => :recommended
+  depends_on "docker" => :recommended
   depends_on "helm" => :recommended
 
   def install
