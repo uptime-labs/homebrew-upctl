@@ -3,23 +3,23 @@ class Upctl < Formula
   homepage "https://github.com/uptime-labs/upctl"
   license "MIT"  # Update this based on your actual license
 
-  version "0.4.0"
+  version "0.5.0"
 
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_arm64"
-      sha256 "2701ea4e51a59c852164ed41966e48b38ff59473de9fc4769e23358fd61a9cde"
+      sha256 "0d241ef892ff78280525d97b10ed5b96edd654207e1131f1f2d16aa72c6e3891"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_darwin_amd64"
-      sha256 "f81e32b8d436c5e91e973ef1353f632f171a40ef3b7149debc4efc62bfb24e64"
+      sha256 "06f8b0d18333665a7ff0afeb6be665280888cc778162a8c7ab584f4a968f6bc9"
     end
   elsif OS.linux?
     if Hardware::CPU.arm?
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_arm64"
-      sha256 "60444774560dc01a747d0ad0ffb17302c3a1e3bdcdfc66a911fbeb3d807b3d34"
+      sha256 "4c57cab38994232b16e97922892ef4dda85c812a4912eaab4cfeb97216bf8935"
     else
       url "https://github.com/uptime-labs/upctl/releases/download/v#{version}/upctl_#{version}_linux_amd64"
-      sha256 "da1d6960dc33a5e66b7ea8cee1c5c16e70a05ef3d0f8e576ab3f8f586cfe1891"
+      sha256 "fe50959edf5f445c7789bd108dc355b68ec74ec2713ab750d70afc9ed651fc3a"
     end
   end
 
