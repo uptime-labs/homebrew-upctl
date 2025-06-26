@@ -23,11 +23,10 @@ class Upctl < Formula
     end
   end
 
-  depends_on "kubectl" => :recommended
-  depends_on "mysql-client" => :recommended
-  depends_on "awscli" => :recommended
-  depends_on "docker" => :recommended
-  depends_on "helm" => :recommended
+  depends_on "awscli"
+  depends_on "mysql-client"
+  depends_on "kubectl" => :optional
+  depends_on "docker" => :optional
 
   def install
     bin.install Dir["*"].first => "upctl"
@@ -38,12 +37,12 @@ class Upctl < Formula
       repositories:
         - name: example
           url: https://example.com/charts
-      
+
       packages:
         - name: example
           chart: example/example
           version: 1.0.0
-      
+
       docker_compose:
         version: '3.8'
         services:
